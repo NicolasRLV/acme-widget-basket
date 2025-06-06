@@ -1,0 +1,13 @@
+{
+    "name": "growsnap/acme-basket",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "GrowSnap\\AcmeBasket\\": "src/"
+        }
+    }
+}
