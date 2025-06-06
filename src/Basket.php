@@ -53,12 +53,14 @@ class Basket
 
         // Step 3: Apply delivery cost based on the subtotal after discount
         $deliveryCost = '0.00';
-        if ((float)$subtotal < 50) {
-            $deliveryCost = (string)$this->deliveryRules['under_50'];
-        } elseif ((float)$subtotal < 90) {
-            $deliveryCost = (string)$this->deliveryRules['under_90'];
-        } else {
-            $deliveryCost = (string)$this->deliveryRules['over_90'];
+        if ((float)$subtotal > 0) {
+            if ((float)$subtotal < 50) {
+                $deliveryCost = (string)$this->deliveryRules['under_50'];
+            } elseif ((float)$subtotal < 90) {
+                $deliveryCost = (string)$this->deliveryRules['under_90'];
+            } else {
+                $deliveryCost = (string)$this->deliveryRules['over_90'];
+            }
         }
 
         // Step 4: Calculate total with bcmath
